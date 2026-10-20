@@ -1,0 +1,15 @@
+// Laravel 11/12: gabungkan konfigurasi berikut ke bootstrap/app.php.
+// Tambahkan import di bagian atas file:
+// use Illuminate\Foundation\Configuration\Middleware;
+// use Illuminate\Http\Request;
+//
+// Di dalam rantai Application::configure(...), gabungkan callback berikut
+// ke ->withMiddleware(...) yang sudah ada (jangan membuat callback kedua):
+// ->withMiddleware(function (Middleware $middleware) {
+//     $middleware->alias([
+//         'role' => \App\Http\Middleware\RoleMiddleware::class,
+//     ]);
+//     $middleware->redirectGuestsTo(fn (Request $request) =>
+//         route('login')
+//     );
+// })
